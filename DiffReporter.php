@@ -169,29 +169,41 @@ class DiffReporter {
         }
 
         echo "Deleted files: (found in upgraded instance but not in repository)\n";
-        foreach ($deletedFiles as $deletedFile) {
-            if ($deletedFile['controlFile'] != null) {
-                throw new Exception('incorrection 1');
+        if($deletedFiles) {
+            foreach ($deletedFiles as $deletedFile) {
+                if ($deletedFile['controlFile'] != null) {
+                    throw new Exception('incorrection 1');
+                }
+                echo "{$deletedFile['testFile']['relativePath']}\n";
             }
-            echo "{$deletedFile['testFile']['relativePath']}\n";
+        } else {
+            echo "not found any...";
         }
         echo "\n";
 
         echo "Modified files: (found in both but differents contents)\n";
-        foreach ($modifiedFiles as $modifiedFile) {
-            if ($modifiedFile['controlFile']['relativePath'] != $modifiedFile['testFile']['relativePath']) {
-                throw new Exception('incorrection 2');
+        if($modifiedFiles) {
+            foreach ($modifiedFiles as $modifiedFile) {
+                if ($modifiedFile['controlFile']['relativePath'] != $modifiedFile['testFile']['relativePath']) {
+                    throw new Exception('incorrection 2');
+                }
+                echo "{$modifiedFile['controlFile']['relativePath']}\n";
             }
-            echo "{$modifiedFile['controlFile']['relativePath']}\n";
+        } else {
+            echo "not found any...";
         }
         echo "\n";
 
         echo "Extra files: (found in repository but not in upgraded instance)\n";
-        foreach ($extraFiles as $extraFile) {
-            if ($extraFile['testFile'] != null) {
-                throw new Exception('incorrection 3');
+        if($extraFiles) {
+            foreach ($extraFiles as $extraFile) {
+                if ($extraFile['testFile'] != null) {
+                    throw new Exception('incorrection 3');
+                }
+                echo "{$extraFile['controlFile']['relativePath']}\n";
             }
-            echo "{$extraFile['controlFile']['relativePath']}\n";
+        } else {
+            echo "not found any...";
         }
         echo "\n";
     }
