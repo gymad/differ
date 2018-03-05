@@ -168,7 +168,7 @@ class DiffReporter {
             echo "WARNING: TOO MANY DIFFS!\n\n";
         }
 
-        echo "Deleted files: (found in upgraded instance but not in repository)\n";
+        echo "Deleted files: (found in upgraded/installed instance but not in repository)\n";
         if($deletedFiles) {
             foreach ($deletedFiles as $deletedFile) {
                 if ($deletedFile['controlFile'] != null) {
@@ -194,7 +194,7 @@ class DiffReporter {
         }
         echo "\n";
 
-        echo "Extra files: (found in repository but not in upgraded instance)\n";
+        echo "Extra files: (found in repository but not in upgraded/installed instance)\n";
         if($extraFiles) {
             foreach ($extraFiles as $extraFile) {
                 if ($extraFile['testFile'] != null) {
