@@ -14,7 +14,7 @@
 
 class RecursiveDirectoryIteration {
 
-    public function readFiles($path, $filesOnly, $relativePathExcludes = array()) {
+    public function readFiles($path, $filesOnly, $relativePathExcludes = array(), $relativeFileExcludes = array()) {
 
         if (!$path) {
             throw new Exception('Path could not be emapty');
@@ -38,6 +38,19 @@ class RecursiveDirectoryIteration {
                 $excluded = false;
                 foreach ($relativePathExcludes as $relativePathExclude) {
                     if (strstr($relativePath, $relativePathExclude) !== false) {
+                        $excluded = true;
+                    }
+                }
+                
+
+                $relativeFile = $object->getFileName();
+                if ($relativeFile[0] == DIRECTORY_SEPARATOR) {
+                    $relativeFile = substr($relativeFile, 1);
+                }
+                
+                
+                foreach ($relativeFileExcludes as $relativeFileExclude) {
+                    if (strstr($relativeFile, $relativeFileExclude) !== false) {
                         $excluded = true;
                     }
                 }

@@ -20,6 +20,8 @@ class DiffReporter {
     
     private $excludedPaths;
     
+    private $excludedFiles;
+    
     private $dieAfter;
     
     private $testFiles;
@@ -30,6 +32,7 @@ class DiffReporter {
         $this->testPath = $config->getTestPath();
         $this->controlPath = $config->getControlPath();
         $this->excludedPaths = $config->getExcludedPaths();
+        $this->excludedFiles = $config->getExcludedFiles();
         $this->dieAfter = $config->getDieAfter();
         $this->testFiles = null;
         $this->controlFiles = null;
@@ -37,8 +40,8 @@ class DiffReporter {
     
     private function readTestAndControlFiles() {
         $recursiveDirectoryIteration = new RecursiveDirectoryIteration();
-        $this->testFiles = $recursiveDirectoryIteration->readFiles($this->testPath, true, $this->excludedPaths);
-        $this->controlFiles = $recursiveDirectoryIteration->readFiles($this->controlPath, true, $this->excludedPaths);
+        $this->testFiles = $recursiveDirectoryIteration->readFiles($this->testPath, true, $this->excludedPaths, $this->excludedFiles);
+        $this->controlFiles = $recursiveDirectoryIteration->readFiles($this->controlPath, true, $this->excludedPaths, $this->excludedFiles);
         unset($recursiveDirectoryIteration);
     }
     

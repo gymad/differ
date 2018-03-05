@@ -13,7 +13,7 @@ include_once __DIR__ . '/RecursiveDirectoryIteration.php';
 
 include __DIR__ . '/config.example.php';
 
-$diffConfig = new DiffReportConfig($testPath, $controlPath, $excludedPaths, $dieAfter);
+$diffConfig = new DiffReportConfig($testPath, $controlPath, $excludedPaths, $excludedFiles, $dieAfter);
 
 $diffReporter = new DiffReporter($diffConfig);
 $report = $diffReporter->getReport();

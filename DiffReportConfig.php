@@ -20,12 +20,15 @@ class DiffReportConfig {
     
     private $excludedPaths;
     
+    private $excludedFiles;
+    
     private $dieAfter;
     
-    public function __construct($testPath, $controlPath, $excludedPaths, $dieAfter) {
+    public function __construct($testPath, $controlPath, $excludedPaths, $excludedFiles, $dieAfter) {
         $this->testPath = $testPath;
         $this->controlPath = $controlPath;
         $this->excludedPaths = $excludedPaths;
+        $this->excludedFiles = $excludedFiles;
         $this->dieAfter = $dieAfter;
     }
     
@@ -39,6 +42,10 @@ class DiffReportConfig {
     
     public function getExcludedPaths() {
         return $this->excludedPaths;
+    }
+    
+    public function getExcludedFiles() {
+        return $this->excludedFiles;
     }
     
     public function getDieAfter() {
