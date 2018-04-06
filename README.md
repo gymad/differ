@@ -1,7 +1,7 @@
 # differ
 Folder diff tool
 
-###Install:
+### Install:
 
 ```
 $ git clone https://github.com/gymad/differ.git
