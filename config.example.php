@@ -6,11 +6,11 @@ $dieAfter = 0;
 //$testPath = '/var/www/html/SuiteCRM-7.9.14';
 //$testPath = '/var/www/html/SuiteAssured';
 //$testPath = '/var/www/html/SuiteCRM-7.10.1';
-$testPath = '/var/www/html/SuiteCRM';
+$testPath = '/var/www/html/release_test/SuiteCRM_release';
 
 //$controlPath = '/var/www/html/SuiteCRM';
 //$controlPath = '/var/www/html/SuiteCRM_controltest';    // pointing to a clean repository instance
-$controlPath = '/var/www/html/SuiteCRM_test';
+$controlPath = '/var/www/html/release_test/SuiteCRM_origin';
 //$controlPath = '/var/www/html/SA_upgrade_test';
 //$controlPath = '/var/www/html/SuiteCRM-7.10.1';
 
