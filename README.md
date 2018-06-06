@@ -5,6 +5,7 @@ Folder diff tool
 
 ```
 $ git clone https://github.com/gymad/differ.git
+$ composer install
 $ cd differ
 ```
 
