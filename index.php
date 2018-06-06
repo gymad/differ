@@ -1,6 +1,6 @@
 <?php
 
-echo "TODO: RecursiveDirectoryIteration in packagist. use: composer require gymad/rditerator\n";
+include_once __DIR__ . '/vendor/autoload.php';
 
 set_time_limit(0);
 ini_set('memory_limit', '-1');
@@ -8,7 +8,7 @@ ini_set('memory_limit', '-1');
 include_once __DIR__ . '/DiffReport.php';
 include_once __DIR__ . '/DiffReportConfig.php';
 include_once __DIR__ . '/DiffReporter.php';
-include_once __DIR__ . '/RecursiveDirectoryIteration.php'; // TODO: use packagist version with composer
+//include_once __DIR__ . '/RecursiveDirectoryIteration.php'; // TODO: use packagist version with composer
 
 
 // ---------------- START ENTRY HERE -------------------

@@ -1,0 +1,12 @@
+{
+    "name": "gymad/differ",
+    "authors": [
+        {
+            "name": "Gyula Madarasz",
+            "email": "gyula.madarasz@salesagility.com"
+        }
+    ],
+    "require": {
+        "gymad/rditerator": "^0.0.1"
+    }
+}
